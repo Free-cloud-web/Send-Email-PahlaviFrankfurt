@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Send Email</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G6BG8KV70C"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-G6BG8KV70C');
+</script>
+
+<script>
+
+const subjects = [
+"Dringender Aufruf zur Gewährleistung der Sicherheit und Durchführung der Kundgebung / Rede von Prinz Reza Pahlavi in Frankfurt am Main"
+];
+
+const bodies = [
+`Sehr geehrte Damen und Herren,
+
+Ich wende mich im Namen der iranischen Gemeinschaft und als Teil der breiten Protestbewegung gegen die Islamische Republik an Sie.
+
+Mit großer Besorgnis haben wir erfahren, dass der geplanten Kundgebung mit einer Rede von Prinz Reza Pahlavi, dem von der großen Mehrheit des iranischen Volkes respektierten und als rechtmäßig anerkannten politischen Führer, am 7. November 2026 im Ostpark Hindernisse in den Weg gelegt bzw. ein Redeverbot in Erwägung gezogen wird. Wir bitten Sie, dies umgehend zu prüfen und die Redemöglichkeit voll und ganz zu gewährleisten. Sollte eine solche Einschränkung vorliegen, fordern wir eine sofortige Klarstellung und Korrektur.
+
+Hierzu möchten wir folgende Punkte nachdrücklich betonen:
+1. Abwehr von Einschüchterung und Propaganda: Das iranische Regime hat ein offenkundiges und aggressives Interesse daran, die Stimme der demokratischen Opposition im Ausland zum Schweigen zu bringen. Ein Redeverbot würde genau dieses Ziel erreichen und als Zeichen der Schwäche gegenüber einem terroristischen Regime gewertet werden.
+2. Menschliche und emotionale Dimension: Viele von uns haben bei den brutalen Niederschlagungen der Proteste im Iran ihre Angehörigen und Liebsten verloren. Für uns ist diese Kundgebung und diese Rede ein essenzieller Raum, an dem wir trauern, unsere Solidarité zeigen und unsere Stimmen für Freiheit und Menschenrechte erheben können.
+3. Schutz der Grundrechte (Artikel 5 & 8 GG): Die Artikel 5 und 8 des deutschen Grundgesetzes schützen unmissverständlich die Meinungs- und Versammlungsfreiheit. Einschränkungen sind nur bei absolut konkreten Gefahren und nach Prüfung milderer Mittel (wie spezifischer Sicherheitsauflagen) zulässig, nicht aber durch das Nachgeben vor externer Erpressung.
+
+Wir fordern das Polizeipräsidium Frankfurt und die zuständigen Behörden nachdrücklich auf, die volle Verantwortung für die Sicherheit dieser wichtigen Veranstaltung zu übernehmen, sich nicht von den unbegründeten Drohungen der Islamischen Republik einschüchtern zu lassen und den Schutz sowohl des Redners als auch aller Teilnehmenden lückenlos zu garantieren.
+
+Wir vertrauen auf die Stärke des demokratischen Rechtsstaates Deutschland und erwarten, dass diese Rede unter gesicherten Bedingungen stattfinden kann.
+
+Mit freundlichen Grüßen,`
+];
+
+function sendEmail(){
+
+const subject = subjects[Math.floor(Math.random() * subjects.length)];
+const body = bodies[Math.floor(Math.random() * bodies.length)];
+
+gtag('event','mailto_open',{
+event_category:'Email Campaign',
+event_label:'GitHub Redirect'
+});
+
+const mailto =
+"mailto:ppffm@polizei.hessen.de"
++ "?bcc=pressestelle.ppffm@polizei.hessen.de,feedbackstelle.ppffm@polizei.hessen.de,demo@stadt-frankfurt.de,ordnungsamt@stadt-frankfurt.de,sicherheit@stadt-frankfurt.de,buero-oberbuergermeister@stadt-frankfurt.de,presse.info@stadt-frankfurt.de,poststelle@innen.hessen.de"
++ "&subject=" + encodeURIComponent(subject) 
++ "&body=" + encodeURIComponent(body);
+
+
+window.location.href = mailto;
+
+}
+
+window.onload = sendEmail;
+
+</script>
+
+</head>
+
+<body>
+<p>اگه شما این پیام رو قبل از بازشدن ایمیل تون و کلیک روی ارسال می بینین. روی سه نقطه بالا سمت راست بزنین </p>
+ <p> Open in External Browser </p>
+</body>
+</html>
